@@ -4,7 +4,7 @@ export default function Navbar() {
   const navItems = ["Início", "Serviços", "Sobre"];
 
   return (
-    <nav className="fixed z-10 w-full flex items-center justify-around py-14 font-regular text-white">
+    <nav className="backdrop-blur-2xl bg-[#181818]/20 border-b border-white/10 fixed z-10 w-full flex items-center justify-around py-14 font-regular text-white">
       <div>
         <h1 className="tracking-[2px] text-4xl font-bold hover:scale-105 duration-300 cursor-default">
           scala <span className="text-[#008fff]">ai</span>
