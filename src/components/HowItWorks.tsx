@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import { Link } from "react-scroll";
 import { CheckCircle } from "lucide-react";
 
 export default function HowItWorks() {
@@ -150,12 +151,16 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <a
-            href="#"
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={700}
+            offset={-150}
             className="cursor-pointer bg-[#4452FE] hover:bg-transparent text-white font-medium py-3 px-8 border border-transparent hover:border-white hover:scale-110 duration-300 hover:shadow-xl shadow-white/10"
           >
             Agende sua consultoria gratuita
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>
