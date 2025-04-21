@@ -1,11 +1,12 @@
 "use client";
 
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 import { HiOutlineMenu } from "react-icons/hi";
 import { useState } from "react";
 
 export default function Navbar() {
-  const navItems = ["Início", "Serviços", "Sobre", "Como funciona?"];
+  const navItems = ["Início", "Sobre", "Serviços", "Como funciona?"];
 
   const [navOpen, setNavOpen] = useState(false);
 
@@ -32,9 +33,36 @@ export default function Navbar() {
             key={index}
             className="hover:scale-110 duration-300 border-b border-transparent hover:border-white py-[2px]"
           >
-            <a href="#" className="tracking-[1px]">
+            <Link
+              to={
+                item == "Início"
+                  ? "hero"
+                  : item == "Serviços"
+                  ? "services"
+                  : item == "Sobre"
+                  ? "about"
+                  : item == "Como funciona?"
+                  ? "howitworks"
+                  : "#"
+              }
+              spy={true}
+              smooth={true}
+              offset={
+                item == "Início"
+                  ? 0
+                  : item == "Serviços"
+                  ? -150
+                  : item == "Sobre"
+                  ? -200
+                  : item == "Como funciona?"
+                  ? -200
+                  : 0
+              }
+              duration={700}
+              className="tracking-[1px] cursor-pointer"
+            >
               {item}
-            </a>
+            </Link>
           </motion.li>
         ))}
       </ul>
@@ -43,7 +71,7 @@ export default function Navbar() {
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1}}
+          transition={{ duration: 0.5, delay: 1 }}
           href="#"
           className="tracking-[1px] text-[18px] border font-light border-white hover:bg-white hover:text-[#181818] duration-300 px-5 py-4"
         >
@@ -62,15 +90,51 @@ export default function Navbar() {
                 key={index}
                 className="py-3 text-center border-b border-white/10 last:border-0"
               >
-                <a
-                  href="#"
+                <Link
+                  to={
+                    item == "Início"
+                      ? "hero"
+                      : item == "Serviços"
+                      ? "services"
+                      : item == "Sobre"
+                      ? "about"
+                      : item == "Como funciona?"
+                      ? "howitworks"
+                      : "#"
+                  }
+                  spy={true}
+                  smooth={true}
+                  offset={
+                    item == "Início"
+                      ? -300
+                      : item == "Serviços"
+                      ? -100
+                      : item == "Sobre"
+                      ? -150
+                      : item == "Como funciona?"
+                      ? -120
+                      : 0
+                  }
+                  duration={700}
                   className="block hover:text-[#008fff] transition-colors duration-300"
                   onClick={() => setNavOpen(false)}
                 >
                   {item}
-                </a>
+                </Link>
               </li>
             ))}
+            <li className="py-3 text-center border-b border-white/10">
+              <Link
+                onClick={() => setNavOpen(false)}
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={700}
+                offset={-120}
+              >
+                Contato
+              </Link>
+            </li>
           </ul>
         )}
       </div>

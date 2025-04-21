@@ -35,7 +35,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="text-white px-5 py-16 flex flex-col justify-center items-center">
+    <section id="services" className="text-white px-5 py-16 flex flex-col justify-center items-center">
       <motion.h1
         initial={{ opacity: 0, x: -100 }}
         whileInView={{ opacity: 1, x: 0 }}

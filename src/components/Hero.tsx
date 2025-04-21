@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section
-      id="home"
+      id="hero"
       className="md:mx-0 mx-4 text-white flex flex-col items-center md:pt-[180px] pt-[280px] md:justify-center h-screen gap-[17px]"
     >
       <motion.h1

@@ -6,7 +6,7 @@ import { CheckCircle } from "lucide-react";
 
 export default function HowItWorks() {
   return (
-    <section className="py-16 text-white bg-[#0a0a0a]">
+    <section id="howitworks" className="py-16 text-white bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <motion.h2
