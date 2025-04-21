@@ -16,7 +16,7 @@ export default function HowItWorks() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold mb-4"
           >
-            Como funciona?
+            Como <span className="text-[#008fff]">funciona?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, x: -100 }}
@@ -148,7 +148,7 @@ export default function HowItWorks() {
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 , delay: .5}}
+          transition={{ duration: 0.5, delay: 0.5 }}
         >
           <a
             href="#"

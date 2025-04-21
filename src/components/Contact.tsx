@@ -12,7 +12,7 @@ export default function Agendamento() {
 
   return (
     <section className="flex flex-col items-center justify-center py-12 px-4 bg-black text-white">
-      <h2 className="text-3xl font-bold mb-6 text-center">Agende sua consultoria gratuitamente</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">Agende sua consultoria <span className="text-[#008fff]">gratuitamente</span></h2>
 
       <div
         className="calendly-inline-widget md:w-[1000px] h-[700px]"
