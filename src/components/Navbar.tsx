@@ -1,7 +1,7 @@
 import { HiOutlineMenu } from "react-icons/hi";
 
 export default function Navbar() {
-  const navItems = ["Início", "Serviços", "Sobre"];
+  const navItems = ["Início", "Serviços", "Sobre", "Como funciona?"];
 
   return (
     <nav className="backdrop-blur-2xl bg-[#181818]/20 border-b border-white/10 fixed z-10 w-full flex items-center justify-around py-14 font-regular text-white">
