@@ -39,7 +39,7 @@ export default function Services() {
       </h1>
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 max-w-[1200px]">
         {services.map((item, index) => (
-          <div key={index} className="px-5 py-5 bg-white/5 rounded-lg hover:scale-110 cursor-default duration-300 border border-white/20 backdrop-blur-md flex flex-col gap-6">
+          <div key={index} className="px-5 py-5 bg-white/5 rounded-lg hover:scale-110 hover:shadow-2xl shadow-white/15 cursor-default duration-300 border border-white/20 backdrop-blur-md flex flex-col gap-6">
             <h1 className="text-center">{item.serviceName}</h1>
             <p className="leading-relaxed text-center">{item.serviceDescription}</p>
           </div>
