@@ -1,4 +1,5 @@
 "use client";
+import { Link } from "react-scroll";
 import { motion } from "framer-motion";
 export default function Hero() {
   return (
@@ -29,28 +30,42 @@ export default function Hero() {
         trabalho.
       </motion.p>
 
-      <div className="mt-10 flex gap-10 font-medium">
-        <motion.a
+      <div className="mt-10 flex gap-10 font-medium ">
+        <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          href="#"
-          className="md:px-7 md:py-5 px-3 py-3 bg-[#4452FE] hover:bg-transparent border border-transparent hover:shadow-xl shadow-white/10 hover:border-white hover:scale-110 duration-300 text-[17px]"
         >
-          Análise gratuita
-        </motion.a>
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            duration={700}
+            offset={-140}
+            className="cursor-pointer md:px-7 md:py-5 px-3 py-3 bg-[#4452FE] hover:bg-transparent border border-transparent hover:shadow-xl shadow-white/10 hover:border-white hover:scale-110 duration-300 text-[17px]"
+          >
+            Análise gratuita
+          </Link>
+        </motion.div>
 
-        <motion.a
+        <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          href="#"
-          className="md:px-7 md:py-5 px-3 py-3 border text-[17px] hover:bg-[#4452FE] hover:border-transparent hover:shadow-xl shadow-white/10 hover:scale-110 duration-300"
         >
-          Saiba mais
-        </motion.a>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            duration={700}
+            offset={-250}
+            className="cursor-pointer md:px-7 md:py-5 px-3 py-3 border text-[17px] hover:bg-[#4452FE] hover:border-transparent hover:shadow-xl shadow-white/10 hover:scale-110 duration-300"
+          >
+            Saiba mais
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
