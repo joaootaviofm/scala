@@ -66,18 +66,25 @@ export default function Navbar() {
           </motion.li>
         ))}
       </ul>
-      <div className="hover:scale-110 duration-300 md:flex hidden">
-        <motion.a
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1 }}
-          href="#"
+      <motion.div
+        initial={{ opacity: 0, x: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="hover:scale-110 duration-300 md:flex cursor-pointer hidden"
+      >
+        <Link
+          to="contact"
+          onClick={() => setNavOpen(false)}
+          spy={true}
+          smooth={true}
+          duration={700}
+          offset={-150}
           className="tracking-[1px] text-[18px] border font-light border-white hover:bg-white hover:text-[#181818] duration-300 px-5 py-4"
         >
           Contato
-        </motion.a>
-      </div>
+        </Link>
+      </motion.div>
       <div className="flex md:hidden">
         <HiOutlineMenu
           onClick={() => setNavOpen(!navOpen)}
