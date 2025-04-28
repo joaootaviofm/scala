@@ -6,7 +6,7 @@ import { HiOutlineMenu, HiX } from "react-icons/hi";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
-  const navItems = ["Início", "Sobre", "Serviços", "Como funciona?"];
+  const navItems = ["Início", "Sobre", "Serviços", "Como funciona?", "FAQ"];
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -79,6 +79,8 @@ export default function Navbar() {
                       ? "about"
                       : item === "Como funciona?"
                       ? "howitworks"
+                      : item === "FAQ"
+                      ? "faq"
                       : "#"
                   }
                   spy={true}
@@ -91,6 +93,8 @@ export default function Navbar() {
                       : item === "Sobre"
                       ? 0
                       : item === "Como funciona?"
+                      ? -100
+                      : item === "FAQ"
                       ? -100
                       : 0
                   }
@@ -165,6 +169,8 @@ export default function Navbar() {
                     ? "about"
                     : item === "Como funciona?"
                     ? "howitworks"
+                    : item === "FAQ"
+                    ? "faq"
                     : "#"
                 }
                 spy={true}
@@ -178,6 +184,8 @@ export default function Navbar() {
                     ? -150
                     : item === "Como funciona?"
                     ? -120
+                    : item === "FAQ"
+                    ? -100
                     : 0
                 }
                 duration={700}
