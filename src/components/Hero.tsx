@@ -1,71 +1,132 @@
 "use client";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="md:mx-0 mx-4 text-white flex flex-col items-center md:pt-[180px] pt-[280px] md:justify-center h-screen gap-[17px]"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#181818] to-[#0a0a0a] md:pt-[180px] pt-[280px]"
     >
-      <motion.h1
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="md:text-[60px] text-[25px] font-medium tracking-[0.2px] md:leading-[88px] text-center"
-      >
-        <span className="text-[#008fff]">Escale 2x</span> mais rápido <br />
-        usando <span className="text-[#008fff]">Inteligência Artificial</span>
-      </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center text-[14px] md:text-[18px]"
-      >
-        Sistemas automatizados que captam clientes, respondem automaticamente e
-        fecham negócios <br /> enquanto você só precisa se preocupar com seu
-        trabalho.
-      </motion.p>
-
-      <div className="mt-10 flex gap-10 font-medium ">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          className="absolute top-0 left-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
         >
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            duration={700}
-            offset={-140}
-            className="cursor-pointer md:px-7 md:py-5 px-3 py-3 bg-[#4452FE] hover:bg-transparent border border-transparent hover:shadow-xl shadow-white/10 hover:border-white hover:scale-110 duration-300 text-[17px]"
-          >
-            Análise gratuita
-          </Link>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,143,255,0.1),transparent_50%)]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_70%,rgba(68,82,254,0.1),transparent_50%)]" />
         </motion.div>
+      </div>
 
-        <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <Link
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={700}
-            offset={-250}
-            className="cursor-pointer md:px-7 md:py-5 px-3 py-3 border text-[17px] hover:bg-[#4452FE] hover:border-transparent hover:shadow-xl shadow-white/10 hover:scale-110 duration-300"
+      <div className="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-center h-full gap-12 w-full">
+          {/* Left Content */}
+          <motion.div 
+            className="flex-1 flex flex-col items-center md:items-start justify-center space-y-8 text-white text-center md:text-left"
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Saiba mais
-          </Link>
-        </motion.div>
+            <motion.h1
+              className="text-4xl md:text-7xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            >
+              Construímos Soluções de IA Inteligentes focadas no crescimento do seu negócio.
+            </motion.h1>
+
+            <motion.p
+              className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              Desbloqueie todo o potencial da sua empresa com soluções de IA seguras,
+              responsáveis e poderosas.
+            </motion.p>
+
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                duration={700}
+                offset={-140}
+                className="group cursor-pointer px-8 py-4 bg-[#4452FE] text-white rounded-lg hover:bg-[#4452FE]/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#4452FE]/20 relative overflow-hidden"
+              >
+                <span className="relative z-10">Análise gratuita</span>
+                <motion.div
+                  className="absolute inset-0 bg-white/20"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "0%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+              <Link
+                to="about"
+                spy={true}
+                smooth={true}
+                duration={700}
+                offset={-250}
+                className="group cursor-pointer px-8 py-4 border border-white text-white rounded-lg hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 relative overflow-hidden"
+              >
+                <span className="relative z-10">Saiba mais</span>
+                <motion.div
+                  className="absolute inset-0 bg-white"
+                  initial={{ x: "-100%" }}
+                  whileHover={{ x: "0%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Image */}
+          <motion.div 
+            className="flex-1 flex items-center justify-center"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            <div className="relative w-full max-w-2xl aspect-square">
+              <motion.div
+                className="absolute inset-0 bg-[#4452FE]/20 rounded-full blur-3xl"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+              <Image
+                src="/bg-semfundo.png"
+                alt="Hero Image"
+                fill
+                className="object-contain relative z-10"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Gradient overlays for mobile */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="md:hidden absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/50 to-transparent z-10" />
+        <div className="md:hidden absolute top-0 right-0 w-full h-full bg-gradient-to-l from-black/50 to-transparent z-10" />
       </div>
     </section>
   );

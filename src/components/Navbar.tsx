@@ -2,149 +2,211 @@
 
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { HiOutlineMenu } from "react-icons/hi";
-import { useState } from "react";
+import { HiOutlineMenu, HiX } from "react-icons/hi";
+import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const navItems = ["Início", "Sobre", "Serviços", "Como funciona?"];
-
   const [navOpen, setNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="backdrop-blur-2xl bg-[#181818]/20 border-b border-white/10 fixed z-10 w-full flex items-center justify-around py-14 font-regular text-white">
-      <div>
-        <motion.h1
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="tracking-[2px] text-4xl font-bold hover:scale-105 duration-300 cursor-default"
-        >
-          scala <span className="text-[#008fff]">ai</span>
-        </motion.h1>
-      </div>
-      <ul className="md:flex gap-10 hidden">
-        {navItems.map((item, index) => (
-          <motion.li
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 * index }}
-            key={index}
-            className="hover:scale-110 duration-300 border-b border-transparent hover:border-white py-[2px]"
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#181818]/80 backdrop-blur-xl border-b border-white/10"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
           >
             <Link
-              to={
-                item == "Início"
-                  ? "hero"
-                  : item == "Serviços"
-                  ? "services"
-                  : item == "Sobre"
-                  ? "about"
-                  : item == "Como funciona?"
-                  ? "howitworks"
-                  : "#"
-              }
+              to="hero"
               spy={true}
               smooth={true}
-              offset={
-                item == "Início"
-                  ? 0
-                  : item == "Serviços"
-                  ? -150
-                  : item == "Sobre"
-                  ? -200
-                  : item == "Como funciona?"
-                  ? -200
-                  : 0
-              }
               duration={700}
-              className="tracking-[1px] cursor-pointer"
+              offset={0}
+              className="cursor-pointer"
             >
-              {item}
+              <h1 className="text-3xl font-bold text-white hover:text-[#008fff] transition-colors duration-300">
+                scala <span className="text-[#008fff]">ai</span>
+              </h1>
             </Link>
-          </motion.li>
-        ))}
-      </ul>
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 1 }}
-        className="hover:scale-110 duration-300 md:flex cursor-pointer hidden"
-      >
-        <Link
-          to="contact"
-          onClick={() => setNavOpen(false)}
-          spy={true}
-          smooth={true}
-          duration={700}
-          offset={-150}
-          className="tracking-[1px] text-[18px] border font-light border-white hover:bg-white hover:text-[#181818] duration-300 px-5 py-4"
-        >
-          Contato
-        </Link>
-      </motion.div>
-      <div className="flex md:hidden">
-        <HiOutlineMenu
-          onClick={() => setNavOpen(!navOpen)}
-          className="text-3xl text-white cursor-pointer"
-        />
-        {navOpen && (
-          <ul className="bg-black border border-white/30 text-white rounded-2xl absolute w-[80%] top-[160px] left-1/2 -translate-x-1/2 p-4 z-50 shadow-white/40 shadow-lg">
+          </motion.div>
+
+          {/* Desktop Navigation */}
+          <motion.ul
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="hidden md:flex items-center gap-8"
+          >
             {navItems.map((item, index) => (
-              <li
+              <motion.li
                 key={index}
-                className="py-3 text-center border-b border-white/10 last:border-0"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <Link
                   to={
-                    item == "Início"
+                    item === "Início"
                       ? "hero"
-                      : item == "Serviços"
+                      : item === "Serviços"
                       ? "services"
-                      : item == "Sobre"
+                      : item === "Sobre"
                       ? "about"
-                      : item == "Como funciona?"
+                      : item === "Como funciona?"
                       ? "howitworks"
                       : "#"
                   }
                   spy={true}
                   smooth={true}
                   offset={
-                    item == "Início"
-                      ? -300
-                      : item == "Serviços"
-                      ? -100
-                      : item == "Sobre"
+                    item === "Início"
+                      ? 0
+                      : item === "Serviços"
                       ? -150
-                      : item == "Como funciona?"
-                      ? -120
+                      : item === "Sobre"
+                      ? -200
+                      : item === "Como funciona?"
+                      ? -200
                       : 0
                   }
                   duration={700}
-                  className="block hover:text-[#008fff] transition-colors duration-300"
-                  onClick={() => setNavOpen(false)}
+                  className="text-white hover:cursor-pointer hover:text-[#008fff] transition-colors duration-300 relative group"
                 >
                   {item}
+                  <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-[#008fff] transition-all duration-300 group-hover:w-full" />
                 </Link>
-              </li>
+              </motion.li>
             ))}
-            <li className="py-3 text-center border-b border-white/10">
+            <motion.li
+              className="hover:scale-110 duration-300"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
+            >
               <Link
-                onClick={() => setNavOpen(false)}
                 to="contact"
                 spy={true}
                 smooth={true}
                 duration={700}
-                offset={-120}
+                offset={-150}
+                className="cursor-pointer px-4 py-2 bg-[#008fff] text-white rounded-lg hover:bg-[#008fff]/90 transition-colors duration-300"
               >
                 Contato
               </Link>
-            </li>
-          </ul>
-        )}
+            </motion.li>
+          </motion.ul>
+
+          {/* Mobile Navigation Toggle */}
+          <motion.button
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="md:hidden text-white"
+            onClick={() => setNavOpen(!navOpen)}
+          >
+            {navOpen ? (
+              <HiX className="w-6 h-6" />
+            ) : (
+              <HiOutlineMenu className="w-6 h-6" />
+            )}
+          </motion.button>
+        </div>
       </div>
-    </nav>
+
+      {/* Mobile Navigation Menu */}
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: navOpen ? 1 : 0, y: navOpen ? 0 : -100 }}
+        transition={{ duration: 0.3 }}
+        className={`md:hidden absolute top-20 left-0 w-full bg-[#181818]/80 backdrop-blur-xl border-b border-white/10 ${
+          navOpen ? "block" : "hidden"
+        }`}
+      >
+        <ul className="py-4 px-4 space-y-4">
+          {navItems.map((item, index) => (
+            <motion.li
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.1 }}
+            >
+              <Link
+                to={
+                  item === "Início"
+                    ? "hero"
+                    : item === "Serviços"
+                    ? "services"
+                    : item === "Sobre"
+                    ? "about"
+                    : item === "Como funciona?"
+                    ? "howitworks"
+                    : "#"
+                }
+                spy={true}
+                smooth={true}
+                offset={
+                  item === "Início"
+                    ? -300
+                    : item === "Serviços"
+                    ? -100
+                    : item === "Sobre"
+                    ? -150
+                    : item === "Como funciona?"
+                    ? -120
+                    : 0
+                }
+                duration={700}
+                className="block text-white hover:text-[#008fff] transition-colors duration-300 py-2"
+                onClick={() => setNavOpen(false)}
+              >
+                {item}
+              </Link>
+            </motion.li>
+          ))}
+          <motion.li
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: navItems.length * 0.1 }}
+          >
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              duration={700}
+              offset={-120}
+              className="block text-center px-4 py-2 bg-[#008fff] text-white rounded-lg hover:bg-[#008fff]/90 transition-colors duration-300"
+              onClick={() => setNavOpen(false)}
+            >
+              Contato
+            </Link>
+          </motion.li>
+        </ul>
+      </motion.div>
+    </motion.nav>
   );
 }
