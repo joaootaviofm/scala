@@ -17,7 +17,7 @@ export default function FAQ() {
       answer: "O tempo de implementação varia de acordo com o projeto, mas geralmente iniciamos com uma fase de consultoria de 1-2 semanas, seguida por 2-4 semanas de desenvolvimento e implementação. Projetos mais complexos podem levar mais tempo, mas sempre mantemos você informado sobre o progresso."
     },
     {
-      question: "Como funciona o preçamento dos serviços?",
+      question: "Como funciona a precificação dos serviços?",
       answer: "Nossos preços são baseados no escopo do projeto e nas necessidades específicas do seu negócio. Oferecemos diferentes pacotes de serviços e também podemos criar soluções personalizadas. Após a consultoria inicial, apresentamos uma proposta detalhada com todos os custos transparentes."
     },
     {
