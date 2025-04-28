@@ -82,7 +82,7 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="cursor-pointer bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm overflow-hidden"
+              className="bg-white/5 rounded-xl border border-white/10 backdrop-blur-sm overflow-hidden"
             >
               <button
                 className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
