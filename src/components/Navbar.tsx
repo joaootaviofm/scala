@@ -87,11 +87,11 @@ export default function Navbar() {
                     item === "Início"
                       ? 0
                       : item === "Serviços"
-                      ? -150
+                      ? -10
                       : item === "Sobre"
-                      ? -200
+                      ? 0
                       : item === "Como funciona?"
-                      ? -200
+                      ? -100
                       : 0
                   }
                   duration={700}
