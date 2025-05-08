@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#181818] to-[#0a0a0a] md:pt-[180px] pt-[280px]"
+      className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#181818] to-[#0a0a0a] md:pt-[120px] pt-[120px]"
     >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -46,8 +46,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              Desbloqueie todo o potencial da sua empresa com soluções de IA seguras,
-              responsáveis e poderosas.
+              Ajudamos imobiliárias e corretores a multiplicar resultados com automações em Inteligência Artificial, geração de leads qualificados e estratégias comprovadas — para que você trabalhe menos, venda mais e escale seu negócio.
             </motion.p>
 
             <motion.div 

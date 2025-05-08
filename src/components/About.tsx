@@ -5,7 +5,10 @@ import { BrainCircuit } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 px-4 bg-gradient-to-b from-[#181818] to-[#0a0a0a] overflow-hidden">
+    <section
+      id="about"
+      className="relative py-24 px-4 bg-gradient-to-b from-[#181818] to-[#0a0a0a] overflow-hidden"
+    >
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,143,255,0.05),transparent_50%)]" />
@@ -43,9 +46,10 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-gray-300 max-w-2xl mx-auto"
+            className="text-lg text-gray-300 max-w-3xl mx-auto"
           >
-            Transformando negócios com inteligência artificial
+            Transformando negócios imobiliários com inteligência artificial e
+            presença digital.
           </motion.p>
         </motion.div>
 
@@ -65,9 +69,11 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                A Scala AI usa inteligência artificial pra colocar seu negócio local
-                na frente dos concorrentes. Automação, anúncios e atendimento
-                inteligente — tudo rodando 24 horas por dia pra gerar mais vendas.
+                A Scala AI posiciona sua imobiliária no digital com estratégias
+                inteligentes. Criamos uma presença online forte, atraímos os
+                leads certos e automatizamos seus processos com IA — tudo
+                funcionando 24h por dia pra te gerar mais oportunidades de
+                venda.
               </p>
             </motion.div>
 
@@ -79,9 +85,10 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Você cuida do que sabe fazer. A IA faz o resto, campanhas que aprendem
-                com o tempo, chatbots que respondem sozinhos, automatiza seu fluxo de
-                trabalho e estratégias pensadas pra trazer clientes todos os dias.
+                Você foca nas negociações. A gente cuida do digital. Nossos
+                sistemas de IA atraem clientes ideais todos os dias, automatizam
+                atendimento com chatbots e mantêm suas campanhas rodando no
+                piloto automático, sem você precisar se preocupar.
               </p>
             </motion.div>
 
@@ -93,9 +100,10 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Se você quer parar de depender da sorte e começar a escalar com
-                estratégia, nós da Scala AI estamos prontos pra te levar pro próximo
-                nível.
+                Chega de contar com sorte ou indicações. Com a Scala AI, sua
+                imobiliária atrai leads prontos pra comprar, ganha presença
+                digital de verdade e escala com processos inteligentes — sem
+                sobrecarregar sua rotina.
               </p>
             </motion.div>
           </motion.div>

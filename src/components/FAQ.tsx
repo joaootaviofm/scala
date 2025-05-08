@@ -9,32 +9,28 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Com quais tipos de negócios vocês trabalham?",
-      answer: "Trabalhamos com empresas de todos os portes e setores, desde pequenos negócios locais até grandes corporações. Nossa especialidade está em ajudar empresas que buscam implementar soluções de IA para melhorar seus processos e resultados."
+      question: "Com quais tipos de negócios imobiliários vocês trabalham?",
+      answer: "Atendemos imobiliárias, corretores autônomos, construtoras e incorporadoras que desejam inovar e potencializar seus resultados com soluções de IA e automação específicas para o mercado imobiliário."
     },
     {
-      question: "Quanto tempo geralmente leva a implementação?",
-      answer: "O tempo de implementação varia de acordo com o projeto, mas geralmente iniciamos com uma fase de consultoria de 1-2 semanas, seguida por 2-4 semanas de desenvolvimento e implementação. Projetos mais complexos podem levar mais tempo, mas sempre mantemos você informado sobre o progresso."
+      question: "Como a Scala AI pode ajudar minha imobiliária a captar mais leads?",
+      answer: "A Scala AI cria uma presença online forte, atraímos os clientes ideais todos os dias, automatizam atendimento com chatbots e mantêm suas campanhas rodando no piloto automático, sem você precisar se preocupar."
     },
     {
-      question: "Como funciona a precificação dos serviços?",
-      answer: "Nossos preços são baseados no escopo do projeto e nas necessidades específicas do seu negócio. Oferecemos diferentes pacotes de serviços e também podemos criar soluções personalizadas. Após a consultoria inicial, apresentamos uma proposta detalhada com todos os custos transparentes."
+      question: "Quanto tempo leva para implementar uma solução de IA na minha imobiliária?",
+      answer: "O prazo depende do escopo do projeto, mas sua solução será implementada o quanto antes, com a melhor qualidade e eficiência possível."
     },
     {
-      question: "Vocês oferecem cursos ou treinamentos gratuitos?",
-      answer: "Sim! Além dos nossos serviços, oferecemos webinars gratuitos e materiais educativos sobre IA e automação. Também realizamos workshops e treinamentos para ajudar sua equipe a entender e aproveitar melhor as soluções implementadas."
+      question: "Como funciona a precificação dos serviços para imobiliárias?",
+      answer: "A precificação é personalizada conforme as necessidades da sua imobiliária. Após uma análise inicial, apresentamos uma proposta detalhada, transparente e sem surpresas, com opções de pacotes ou soluções sob medida."
     },
     {
-      question: "Em quais indústrias vocês são especializados?",
-      answer: "Temos experiência em diversos setores, incluindo varejo, saúde, educação, serviços financeiros, imobiliário e muito mais. Nossa equipe multidisciplinar nos permite adaptar soluções específicas para cada setor, garantindo os melhores resultados."
+      question: "Vocês oferecem treinamentos para corretores e equipes?",
+      answer: "Sim! Oferecemos treinamentos práticos e workshops para corretores, gestores e equipes, focando no uso de ferramentas digitais, automação e estratégias de IA para o mercado imobiliário."
     },
     {
-      question: "Vocês constroem soluções do zero ou utilizam ferramentas existentes?",
-      answer: "Utilizamos uma abordagem híbrida. Para algumas necessidades, aproveitamos ferramentas robustas e testadas do mercado, enquanto para casos específicos, desenvolvemos soluções personalizadas. Isso nos permite oferecer a melhor solução para cada caso, com eficiência e custo-benefício."
-    },
-    {
-      question: "Como saber se a IA é adequada para o meu negócio?",
-      answer: "Durante nossa consultoria gratuita, avaliamos seu negócio e identificamos oportunidades onde a IA pode trazer benefícios reais. Analisamos fatores como volume de dados, processos repetitivos, necessidades de automação e objetivos de negócio para determinar a melhor abordagem."
+      question: "Quais diferenciais vocês oferecem para o mercado imobiliário?",
+      answer: "Nossa equipe é especializada no setor imobiliário, entendendo as dores e oportunidades do segmento. Oferecemos soluções inovadoras, suporte dedicado e foco total em resultados para imobiliárias e profissionais do ramo."
     }
   ];
 
